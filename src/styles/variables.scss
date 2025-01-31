@@ -4,5 +4,5 @@ $color-gris: #BBBABA;
 $color-negro: #000000;
 $color-azul-oscuro: #04091c;
 
-$font-primary: 'Poppins', sans-serif;
-$font-secondary: 'Space Grotesk', sans-serif;
+$font-primary: var(--font-poppins);
+$font-secondary: var(--font-space-grotesk);

@@ -1,27 +1,34 @@
 @import "./variables.scss";
 
 .title {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: $font-secondary;
   font-size: 60px;
-  font-weight: 700;
-  color: $color-azul-primario;
-}
-
-.subtitle {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 48px;
-  font-weight: 500;
+  font-weight: 700; // Bold
   color: $color-verde;
 }
 
-.content {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+.subtitle {
+  font-family: $font-secondary;
+  font-size: 48px;
+  font-weight: 500; // Medium
+  color: $color-azul-primario;
+}
+
+.description {
+  font-family: $font-primary;
+  font-size: 30px;
+  font-weight: 400; // Regular
   color: $color-azul-oscuro;
 }
 
-.highlight {
-  color: $color-gris;
-  font-weight: 700;
+.text-p {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 400; // Regular
+}
+
+.text-h {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 600; // SemiBold
 }

@@ -17,8 +17,6 @@
     "sass": "^1.83.4"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.5"
+    "eslint": "^9"
   }
 }
