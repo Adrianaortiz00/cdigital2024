@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Excluir archivos sensibles
 .env
+.env.local
