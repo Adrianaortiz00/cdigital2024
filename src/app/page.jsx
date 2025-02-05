@@ -1,4 +1,6 @@
+import "@/styles/globals.scss";
 import styles from "../styles/page.module.scss";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Inicio | CDigital | Soluciones en Power Platform",
@@ -9,15 +11,16 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <h1 className={styles.title}>Space Grotesk | Bold 60 | Title h1</h1>
-      <h2 className={styles.subtitle}>
+      <h1 className="title">Space Grotesk | Bold 60 | Title h1</h1>
+      <h2 className="subtitle">
         Space Grotesk | Medium 48 | Subtitle h2
       </h2>
-      <h3 className={styles.description}>
+      <h3 className="description">
         Poppins | Regular 30 | Descriptions h3
       </h3>
-      <p className={styles.textP}>Poppins | Regular 18 | Text p</p>
-      <h4 className={styles.textH}>Poppins | SemiBold 18 | Text h</h4>
+      <p className="text-p">Poppins | Regular 18 | Text p</p>
+      <h4 className="text-h">Poppins | SemiBold 18 | Text h</h4>
+      <ContactForm/>
     </div>
   );
 }

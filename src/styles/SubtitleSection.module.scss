@@ -1,0 +1,44 @@
+@import "./variables.scss";
+@import "./globals.scss";
+
+.subtitleSection {
+  max-width: 488px;
+  text-align: center;
+
+  h2 {
+    @extend .subtitle;
+    margin: auto
+  }
+
+  p {
+    @extend .text-p;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.primary-blue {
+    color: $primary-blue-color;
+  }
+
+  &.grey {
+    color: $grey-color;
+  }
+
+  &.black {
+    color: $black-color;
+  }
+
+  &.white {
+    color: $white-color;
+  }
+}

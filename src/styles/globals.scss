@@ -1,12 +1,33 @@
 @import './variables.scss';
 
-:root {
-  --font-primary: var(--font-poppins);
-  --font-secondary: var(--font-space-grotesk);
+
+.title {
+  font-family: $font-secondary;
+  font-size: 60px;
+  font-weight: 700; // Bold
+  color: $green-color;
 }
 
-body {
-  font-family: var(--font-primary);
-  background: #f5f5f5;
-  color: $primary-blue-color;
+.subtitle {
+  font-family: $font-secondary;
+  font-size: 48px;
+  font-weight: 500; // Medium
+}
+
+.description {
+  font-family: $font-primary;
+  font-size: 30px;
+  font-weight: 400; // Regular
+}
+
+.text-p {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 400; // Regular
+}
+
+.text-h {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 600; // SemiBold
 }
