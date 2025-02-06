@@ -1,12 +1,46 @@
 @import './variables.scss';
 
-:root {
-  --font-primary: var(--font-poppins);
-  --font-secondary: var(--font-space-grotesk);
+.title {
+  font-family: $font-secondary;
+  font-size: 60px;
+  font-weight: 700; // Bold
 }
 
-body {
-  font-family: var(--font-primary);
-  background: #f5f5f5;
-  color: $color-azul-primario;
+.subtitle {
+  font-family: $font-secondary;
+  font-size: 48px;
+  font-weight: 500; // Medium
+  color: $primary-blue-color;
+}
+
+.description {
+  font-family: $font-primary;
+  font-size: 30px;
+  font-weight: 400; // Regular
+  color: $dark-blue-color;
+}
+
+.text-p {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 400; // Regular
+}
+
+.text-h {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-weight: 600; // SemiBold
+}
+
+
+//customized
+.graphicRectangleSlider{
+  width: 350px;
+  height: 450px;
+  background-color: $primary-blue-color;
+  clip-path: ellipse(90% 300px at 50% 0%);
+  left:100px;
+  top:150px;
+  z-index: 2;
+  position: absolute;
 }
