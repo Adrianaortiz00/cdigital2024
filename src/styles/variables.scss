@@ -1,8 +1,10 @@
-$color-azul-primario: #1b4dff;
-$color-verde: #7EDC3B;
-$color-gris: #BBBABA;
-$color-negro: #000000;
-$color-azul-oscuro: #04091c;
+$primary-blue-color: #1b4dff;
+$green-color: #7EDC3B;
+$grey-color: #BBBABA;
+$black-color: #000000;
+$white-color: #ffffff;
+$dark-blue-color: #04091c;
+$blue-gradient: linear-gradient(180deg, #0079FF 0%, #0079FF 19%, #11215C 100%);
 
-$font-primary: var(--font-poppins);
-$font-secondary: var(--font-space-grotesk);
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Space Grotesk", sans-serif;
