@@ -13,9 +13,9 @@ import styles from "../styles/components/sliderMain.module.scss";
 const slides=[
   {
     id:1,
-    title:"Título 1",
-    text:"Esta es la descripción del primer slide",
-    button:"Botón 1",
+    title:"Mejora la gestión de tus procesos",
+    text:"Con sistemas tecnológicos automatizados",
+    button:"Conoce más",
     image:"/images/ipad-slider-1.png",
   },
   {
@@ -55,8 +55,8 @@ function SliderMain() {
       /* autoplay={{
         delay: 3500,
         disableOnInteraction: false,
-      }} */
-      loop={true}
+      }} 
+      loop={true} */
       className={styles["slider-container"]}
     >
        {slides.map((slide, index) => (
@@ -86,11 +86,12 @@ function SliderMain() {
           />
 
           <motion.div
-          initial={{ opacity: 0, y: 20, rotate: 180 }}
-          animate={isActive ? { opacity: 1, y: 0, rotate: 180 } : { opacity: 0, y: 20, rotate: 180 }}
-          transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
-          className={styles["rectangle-blue"]}
+            initial={{ opacity: 0, y: 20, rotate: 180 }}
+            animate={isActive ? { opacity: 1, y: 0, rotate: 180 } : { opacity: 0, y: 20, rotate: 180 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
+            className={styles["rectangle-blue"]}
           />
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={isActive ? { opacity: 1} : { opacity: 0 }}
@@ -106,6 +107,26 @@ function SliderMain() {
             className={styles["image"]}
           />
           </motion.div>
+        </div>
+        <div className={styles["circle-section"]}>
+          <motion.div
+            initial={{ x: 0, y: 20, scale: 1.0 }}
+            animate={isActive ? { x: 1, y: 0, scale: 1.0 } : { x: 0, y: 20, scale: 1.0 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
+            className={styles["circle-blue"]}
+          />
+          <motion.div
+            initial={{ x: 0, y: 30, scale: 1.0 }}
+            animate={isActive ? {x: 1, y: 0, scale: 1.80 } : { x: 0, y: 30, rotate: 1.0 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
+            className={styles["circle-green"]}
+          />
+          <motion.div
+            initial={{ x: 0, y: 40, scale: 1.5 }}
+            animate={isActive ? { x: 1, y: 0, scale: 0.5 } : { x: 0, y: 40, scale: 1.5 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
+            className={styles["circle-gray"]}
+          />
         </div>
       </div>
     )}

@@ -13,20 +13,20 @@
 
         .slide-content {
             position: absolute;
-            width: 50%;
+            width: 40%;
             /* left: 40px; */
-            top: 20%;
+            top: 10%;
             padding: 20px;
             border-radius: 8px;
-            color: white;
+            color: $white-color;
 
             .title-slide {
-                color: $green-color;
+                color: $white-color;
                 @extend .title;
             }
 
             .description-slide {
-                color: #fff;
+                color: $white-color;
                 @extend .description;
             }
         }
@@ -66,6 +66,33 @@
                 margin-top: 15%;
             }
         }
+        .circle-section{
+            position: absolute;
+            width: 100%;
+            
+            .circle-blue{
+                width: 50px;
+                background-color: $dark-blue-color;
+                opacity: .6;
+                position: relative;
+                z-index: -2;
+            }
+            .circle-green{
+                width: 50px;
+                background-color: $green-color;
+                opacity: .4;
+                position: relative;
+                z-index: -2;
+            }
+            .circle-gray{
+                width: 50px;
+                background-color: $grey-color;
+                opacity: .4;
+                position: relative;
+                z-index: -2;
+            }
+        }
+            
     }
 
 
