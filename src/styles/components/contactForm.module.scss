@@ -1,5 +1,5 @@
-@import "./variables.scss";
-@import "./globals.scss";
+@import "../variables.scss";
+@import "../globals.scss";
 
 .container {
   display: flex;
@@ -9,8 +9,7 @@
   padding: 32px;
   background: $blue-gradient;
   clip-path: ellipse(100% 100% at 50% 100%);
-  width: 100%;
-  padding-top: 120px;
+  padding-top: 100px;
 }
 
 .contact {
@@ -27,7 +26,7 @@
   gap: 25px;
   width: 100%;
   max-width: 400px;
-  padding-top: 80px;
+  padding-top: 50px;
 
   input {
     text-align: center;
@@ -37,8 +36,7 @@
     width: 800px;
     border: none;
     outline: none;
-    box-shadow:0px 4px 1px  $green-color;
-
+    box-shadow: 0px 4px 1px $green-color;
 
     @media (max-width: 1024px) {
       width: 600px;
@@ -60,7 +58,7 @@
   width: 800px;
   border: none;
   outline: none;
-  box-shadow:0px 4px 1px  $green-color;
+  box-shadow: 0px 4px 1px $green-color;
 
   @media (max-width: 1024px) {
     width: 600px;
@@ -93,7 +91,15 @@
 .error {
   @extend .text-p;
   font-size: 15px;
-  color: #ff0000;
-  margin-bottom: -3px;
-  margin-top: -10px;
+  color: $white-color;
+  width: 500px;
+  text-align: center;
+  margin: -10px;
+}
+
+.success {
+  @extend .text-p;
+  font-size: 15px;
+  color: $white-color;
+  
 }

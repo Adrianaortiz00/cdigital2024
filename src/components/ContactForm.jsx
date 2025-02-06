@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { sendInternalEmail, sendUserEmail } from "../utils/SendEmail";
-import styles from "../styles/contactForm.module.scss";
+import { sendInternalEmail, sendUserEmail } from "../utils/sendEmail";
+import styles from "../styles/components/contactForm.module.scss";
 import SubtitleSection from "./SubtitleSection";
 
 const ContactForm = () => {
@@ -12,6 +12,8 @@ const ContactForm = () => {
     message: "",
   });
   const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,24 +28,39 @@ const ContactForm = () => {
       newErrors.email = "El correo no es válido";
     }
     if (!formData.message) newErrors.message = "El mensaje es obligatorio";
+    if (formData.phone && !/^\d{9,15}$/.test(formData.phone)) {
+        newErrors.phone = "El teléfono debe contener solo números (9-15 dígitos)";
+      }
     return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors({});
+    setSuccessMessage("");
+    
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
+    setIsLoading(true);
+
     try {
-      await sendInternalEmail(formData);
-      await sendUserEmail({ message: formData.message });
+      await Promise.all([
+        sendInternalEmail(formData),
+        sendUserEmail({ name: formData.name, message: formData.message, email: formData.email }),
+      ]);
+
       setFormData({ name: "", email: "", phone: "", message: "" });
-      setErrors({});
+      setSuccessMessage("¡Mensaje enviado con éxito!");
+
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
+      setErrors({ form: error.message || "Hubo un problema al enviar el mensaje. Inténtalo de nuevo." });;
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -84,6 +101,7 @@ const ContactForm = () => {
           onChange={handleChange}
           className={styles.input}
         />
+        {errors.phone && <span className={styles.error}>{errors.phone}</span>}
 
         <textarea
           name="message"
@@ -92,11 +110,14 @@ const ContactForm = () => {
           onChange={handleChange}
           className={styles.textarea}
         ></textarea>
-        {errors.message && (
-          <span className={styles.error}>{errors.message}</span>
-        )}
-        <button type="submit" className={styles.button}>
-          Enviar mensaje
+        {errors.message && <span className={styles.error}>{errors.message}</span>}
+
+        {errors.form && <span className={styles.error}>{errors.form}</span>}
+
+        {successMessage && <span className={styles.success}>{successMessage}</span>}
+
+        <button type="submit" className={styles.button} disabled={isLoading}>
+          {isLoading ? "Enviando..." : "Enviar mensaje"}
         </button>
       </form>
     </div>

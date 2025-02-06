@@ -1,5 +1,5 @@
 import "@/styles/globals.scss";
-import styles from "../styles/page.module.scss";
+import styles from "../styles/components/page.module.scss";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
