@@ -1,5 +1,6 @@
 import "../styles/globals.scss";
 import Fonts from "../components/Fonts.jsx";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "CDigital | Soluciones en Power Platform",
@@ -40,7 +41,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Fonts />
-        {children}
+        <nav>
+          <Header />
+        </nav>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
