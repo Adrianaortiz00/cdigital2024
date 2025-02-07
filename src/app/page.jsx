@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import SliderMain from "@/components/SliderMain";
 
 export const metadata = {
@@ -10,6 +11,26 @@ export default function Page() {
   return (
     <div>
       <SliderMain/>
+      <Button 
+        children={"holi peque"}
+        variant = {"green-button"}
+        size = {"small"} 
+      />
+      <Button 
+        children={"holi verde"}
+        variant = {"green-button"}
+        size = {"medium"} 
+      />
+      <Button 
+        children={"holi azul"}
+        variant = {"blue-button"}
+        size = {"medium"} 
+      />
+      <Button 
+        children={"holi azul grande"}
+        variant = {"blue-button"}
+        size = {"large"} 
+      />
       <h1 className="title">Space Grotesk | Bold 60 | Title h1</h1>
       <h2 className="subtitle">
         Space Grotesk | Medium 48 | Subtitle h2

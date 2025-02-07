@@ -3,7 +3,7 @@ import styles from '../styles/components/button.module.scss';
 const Button = ({
   onClick,
   children,
-  variant = "primary",
+  variant = "green-button",
   size = "medium",
   disabled = false,
 }) => {

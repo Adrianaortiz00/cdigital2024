@@ -72,7 +72,7 @@ function SliderMain() {
         >
           <h2 className={styles["title-slide"]}>{slide.title}</h2>
           <h3 className={styles["description-slide"]}>{slide.text}</h3>
-          <Button children={slide.button} />
+          <Button children={slide.button} size = {"large"} />
           
         </motion.div>
 
@@ -110,20 +110,26 @@ function SliderMain() {
         </div>
         <div className={styles["circle-section"]}>
           <motion.div
-            initial={{ x: 0, y: 20, scale: 1.0 }}
-            animate={isActive ? { x: 1, y: 0, scale: 1.0 } : { x: 0, y: 20, scale: 1.0 }}
+            initial={{ x: 1400, y: 20, scale: 1.0 }}
+            animate={isActive ? { x: 1200, y: 400, scale: 1.0 } : { x: 1000, y: 20, scale: 1.0 }}
             transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
             className={styles["circle-blue"]}
           />
           <motion.div
-            initial={{ x: 0, y: 30, scale: 1.0 }}
-            animate={isActive ? {x: 1, y: 0, scale: 1.80 } : { x: 0, y: 30, rotate: 1.0 }}
+            initial={{ x: 400, y: 10, scale: 1.0 }}
+            animate={isActive ? {x: 630, y: 30, scale: 1.80 } : { x: 400, y: 10, scale: 1.0 }}
             transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
             className={styles["circle-green"]}
           />
           <motion.div
-            initial={{ x: 0, y: 40, scale: 1.5 }}
-            animate={isActive ? { x: 1, y: 0, scale: 0.5 } : { x: 0, y: 40, scale: 1.5 }}
+            initial={{ x: 0, y: 10, scale: 1.0 }}
+            animate={isActive ? {x: 30, y: 90, scale: 1.80 } : { x: 0, y: 10, scale: 1.0 }}
+            transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
+            className={styles["circle-blue"]}
+          />
+          <motion.div
+            initial={{ x: 500, y: 10, scale: 1.5 }}
+            animate={isActive ? { x: 550, y: 40, scale: 0.5 } : { x: 500, y: 10, scale: 1.5 }}
             transition={{ duration: 1.0, ease: "easeOut", delay:0.2 }}
             className={styles["circle-gray"]}
           />
