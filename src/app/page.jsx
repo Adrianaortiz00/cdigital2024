@@ -1,5 +1,7 @@
 import Button from "@/components/Button";
 import SliderMain from "@/components/SliderMain";
+import styles from "../styles/components/page.module.scss";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Inicio | CDigital | Soluciones en Power Platform",
@@ -40,6 +42,7 @@ export default function Page() {
       </h3>
       <p className="text-p">Poppins | Regular 18 | Text p</p>
       <h4 className="text-h">Poppins | SemiBold 18 | Text h</h4>
+      <ContactForm/>
     </div>
   );
 }

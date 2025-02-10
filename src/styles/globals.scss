@@ -3,33 +3,31 @@
 .title {
   font-family: $font-secondary;
   font-size: 60px;
-  font-weight: 700; // Bold
+  font-weight: 700;
 }
 
 .subtitle {
   font-family: $font-secondary;
   font-size: 48px;
-  font-weight: 500; // Medium
-  color: $primary-blue-color;
+  font-weight: 500; 
 }
 
 .description {
   font-family: $font-primary;
   font-size: 30px;
-  font-weight: 400; // Regular
-  color: $dark-blue-color;
+  font-weight: 400; 
 }
 
 .text-p {
   font-family: $font-primary;
   font-size: 18px;
-  font-weight: 400; // Regular
+  font-weight: 400; 
 }
 
 .text-h {
   font-family: $font-primary;
   font-size: 18px;
-  font-weight: 600; // SemiBold
+  font-weight: 600; 
 }
 
 
