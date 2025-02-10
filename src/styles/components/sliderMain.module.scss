@@ -1,0 +1,109 @@
+@import "../variables.scss";
+@import "../globals.scss";
+
+.slider-container {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    background-color: $primary-blue-color;
+
+    .slide {
+        width: 100%;
+        display: flex;
+
+        .slide-content {
+            position: absolute;
+            width: 40%;
+            /* left: 40px; */
+            top: 10%;
+            padding: 20px;
+            border-radius: 8px;
+            color: $white-color;
+
+            .title-slide {
+                color: $white-color;
+                @extend .title;
+            }
+
+            .description-slide {
+                color: $white-color;
+                @extend .description;
+            }
+            button::after{
+                background-color: $dark-blue-color;
+            }
+        }
+
+        .image-container {
+            position: absolute;
+            width: 40%;
+            right: 20px;
+            right: -20px;
+            top: -47px;
+
+            .rectangle-blue {
+                width: 200px;
+                height: 600px;
+                background-color: $dark-blue-color;
+                clip-path: ellipse(90% 300px at 50% 0%);
+                z-index: 2;
+                position: absolute;
+                transform: rotate(3.142rad);
+                left: -20%;
+
+            }
+
+            .rectangle-green {
+                width: 200px;
+                height: 400px;
+                background-color: $green-color;
+                clip-path: ellipse(90% 300px at 50% 0%);
+                z-index: 3;
+                position: absolute;
+                left: 35%;
+            }
+
+            .image {
+                position: relative;
+                z-index: 5;
+                margin-top: 15%;
+            }
+        }
+        .circle-section{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            
+            .circle-blue{
+                width: 50px;
+                height: 50px;
+                background-color: $dark-blue-color;
+                opacity: .6;
+                position: relative;
+                z-index: -2;
+                border-radius: 50px;
+            }
+            .circle-green{
+                width: 50px;
+                height: 50px;
+                background-color: $green-color;
+                opacity: .4;
+                position: relative;
+                z-index: -2;
+                border-radius: 50px;
+            }
+            .circle-gray{
+                width: 50px;
+                height: 50px;
+                background-color: $grey-color;
+                opacity: .4;
+                position: relative;
+                z-index: -2;
+                border-radius: 50px;
+            }
+        }
+            
+    }
+
+
+}
