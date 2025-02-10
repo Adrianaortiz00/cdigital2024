@@ -55,8 +55,8 @@ function SliderMain() {
       /* autoplay={{
         delay: 3500,
         disableOnInteraction: false,
-      }} 
-      loop={true} */
+      }}  */
+      loop={true} 
       className={styles["slider-container"]}
     >
        {slides.map((slide, index) => (
