@@ -1,7 +1,9 @@
 import styles from "@/styles/components/Header.module.scss";
 import Button from "@/components/Button";
+import Image from "next/image";
 
 import NavItem from "./NavItem";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -12,18 +14,19 @@ const Header = () => {
         text="Nuestros clientes"
         className={styles.clientes}
       />
-      <div className={styles.logo}>
-        <img
+      <Link href="/" className={styles.logo}>
+        <Image
           src="/images/cdigital-completo.svg"
           alt="Logo"
-          width={250}
-          height={83}
+          width={230}
+          height={75}
+          priority
         />
-      </div>
+      </Link>
       <NavItem href="/acerca" text="Soluciones" className={styles.soluciones} />
-      <div>
-        <Button children={"Contacto"} variant={"blue-button"} />
-      </div>
+      <Link href="/contacto" passHref>
+        <Button variant="blue-button">Contacto</Button>
+      </Link>
     </header>
   );
 };
