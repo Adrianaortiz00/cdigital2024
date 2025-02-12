@@ -14,7 +14,7 @@ const Header = () => {
       />
       <div className={styles.logo}>
         <img
-          src="/images/cdigital_completo.svg"
+          src="/images/cdigital-completo.svg"
           alt="Logo"
           width={250}
           height={83}
