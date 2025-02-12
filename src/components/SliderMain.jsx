@@ -50,8 +50,6 @@ function SliderMain() {
       modules={[Navigation, Pagination, Autoplay,]}
       spaceBetween={50}
       slidesPerView={1}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
       /* autoplay={{
         delay: 3500,
         disableOnInteraction: false,
