@@ -1,0 +1,72 @@
+@import "../variables.scss";
+@import "../globals.scss";
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  //transition: background 0.3s ease, transform 0.2s ease;
+  @extend .text-h;
+  position: relative;
+
+  &::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0px;
+    right: 0px;
+    background-color: $primary-blue-color;
+    border-radius: 50px;
+    z-index: -1;
+    transform: rotate(-8deg); // Rotate only the shadow
+    transition: background 0.7s ease;
+  }
+  &:hover::after {
+    transform: rotate(-8deg) translate(5px, 5px); 
+    opacity: 0; 
+  }
+}
+
+/* Styles for every variant */
+
+.green-button {
+  background-color: $green-color;
+  color: white;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $green-color;
+  }
+}
+
+.blue-button {
+  background-color: $primary-blue-color;
+  color: white;
+
+  &:hover {
+    background-color: $primary-blue-color;
+    transform: scale(1.05);
+  }
+  &::after{
+    background-color: $green-color;
+  }
+}
+
+
+/* Styles for every Size */
+.small {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.medium {
+  padding: 12px 30px;  
+}
+
+.large {
+  padding: 16px 42px;
+  font-size: 18px;
+}

@@ -1,33 +1,44 @@
 @import './variables.scss';
 
-
 .title {
   font-family: $font-secondary;
   font-size: 60px;
-  font-weight: 700; // Bold
-  color: $green-color;
+  font-weight: 700;
 }
 
 .subtitle {
   font-family: $font-secondary;
   font-size: 48px;
-  font-weight: 500; // Medium
+  font-weight: 500; 
 }
 
 .description {
   font-family: $font-primary;
   font-size: 30px;
-  font-weight: 400; // Regular
+  font-weight: 400; 
 }
 
 .text-p {
   font-family: $font-primary;
   font-size: 18px;
-  font-weight: 400; // Regular
+  font-weight: 400; 
 }
 
 .text-h {
   font-family: $font-primary;
   font-size: 18px;
-  font-weight: 600; // SemiBold
+  font-weight: 600; 
+}
+
+
+//customized
+.graphicRectangleSlider{
+  width: 350px;
+  height: 450px;
+  background-color: $primary-blue-color;
+  clip-path: ellipse(90% 300px at 50% 0%);
+  left:100px;
+  top:150px;
+  z-index: 2;
+  position: absolute;
 }
