@@ -22,7 +22,7 @@ const Header = () => {
       </div>
       <NavItem href="/acerca" text="Soluciones" className={styles.soluciones} />
       <div>
-        <Button children={"Contacto"} variant={"blue-button"} size={"medium"} />
+        <Button children={"Contacto"} variant={"blue-button"} />
       </div>
     </header>
   );
