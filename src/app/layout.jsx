@@ -1,4 +1,3 @@
-import "../styles/globals.scss";
 import Fonts from "../components/Fonts.jsx";
 import Header from "@/components/Header";
 

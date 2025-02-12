@@ -13,33 +13,4 @@
     justify-content: center;
   }
 
-  .contactButton {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 110%;
-      height: 110%;
-      background: #7adf66;
-      border-radius: 25px;
-      z-index: -1;
-      transform: translate(-50%, -50%);
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
-    }
-  }
 }
