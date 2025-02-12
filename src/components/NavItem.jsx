@@ -7,8 +7,8 @@ const NavItem = ({ href, text }) => {
       <span>{text}</span>
       <img src="images/separator.svg" 
       alt="Separator" 
-      width={50} 
-      height={5} />
+      width={60} 
+      height={12} />
     </Link>
   );
 };
