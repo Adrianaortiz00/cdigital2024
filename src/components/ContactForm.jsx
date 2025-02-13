@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { sendInternalEmail, sendUserEmail } from "../utils/sendEmail";
-import styles from "../styles/components/contactForm.module.scss";
+import styles from "../styles/components/ContactForm.module.scss";
 import SubtitleSection from "./SubtitleSection";
 
 const ContactForm = () => {
