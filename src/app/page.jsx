@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import SliderMain from "@/components/SliderMain";
-import styles from "../styles/components/page.module.scss";
 import ContactForm from "@/components/ContactForm";
+import SliderLogos from "@/components/SliderLogos";
 
 export const metadata = {
   title: "Inicio | CDigital | Soluciones en Power Platform",
@@ -13,6 +13,7 @@ export default function Page() {
   return (
     <div>
       <SliderMain/>
+      <SliderLogos/>
       <Button 
         children={"holi peque"}
         variant = {"green-button"}
