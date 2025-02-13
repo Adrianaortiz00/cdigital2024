@@ -7,7 +7,7 @@
 
   h2 {
     @extend .subtitle;
-    margin: auto
+    margin: auto;
   }
 
   p {
@@ -25,20 +25,15 @@
   &.right {
     text-align: right;
   }
+}
 
-  &.primary-blue {
-    color: $primary-blue-color;
+@each $name, $color in $colors {
+  .title-#{$name} {
+    color: $color;
   }
 
-  &.grey {
-    color: $grey-color;
-  }
-
-  &.black {
-    color: $black-color;
-  }
-
-  &.white {
-    color: $white-color;
+  .description-#{$name} {
+    color: $color;
   }
 }
+

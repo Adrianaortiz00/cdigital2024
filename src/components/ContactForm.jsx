@@ -70,7 +70,8 @@ const ContactForm = () => {
         title="Contáctanos"
         description="This is a description of the section in center alignment. It could have 2 lines per subtitle."
         alignment="center"
-        color="white"
+        titleColor="white" 
+        descriptionColor="white" 
       />
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
