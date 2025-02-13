@@ -1,0 +1,24 @@
+@import "../variables.scss";
+@import "../globals.scss";
+
+.section{
+    background-image: url('data:image/svg+xml,<svg width="1440" height="1379" viewBox="0 0 1440 1379" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1440 138.914C1440 138.914 1285.75 -50.7413 1022.92 13.1529C752.602 78.8347 693.677 250.418 390.845 124.33C141.005 20.3249 0 178.022 0 178.022V1240.11C0 1240.11 154.253 1429.77 417.197 1365.83C687.542 1300.15 746.323 1128.54 1049.27 1254.65C1299 1358.66 1440 1200.87 1440 1200.87V138.914Z" fill="url(%23paint0_linear_3016_373)"/><defs><linearGradient id="paint0_linear_3016_373" x1="405" y1="1650.5" x2="1127.16" y2="-317.616" gradientUnits="userSpaceOnUse"><stop stop-color="%230079FF" stop-opacity="0.8"/><stop offset="1" stop-color="%230079FF" stop-opacity="0.72"/></linearGradient></defs></svg>');
+    width: 100%;
+    height: 1379px;
+    background-repeat: no-repeat;
+    background-position: center;
+    .services{
+        background-image: url('data:image/svg+xml,<svg width="1440" height="1268" viewBox="0 0 1440 1268" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1439.86 153.794C1439.86 153.794 1238.56 262.134 1017.09 120.957C624.725 -129.17 372.318 63.4313 249.412 208.356C153.258 321.664 0 252.829 0 252.829V1114.18C0 1114.18 201.321 1005.87 422.914 1147.04C815.304 1397.17 1067.68 1204.57 1190.59 1059.62C1286.77 946.206 1440 1015.15 1440 1015.15L1439.86 153.794Z" fill="url(%23paint0_linear_3016_374)"/><defs><linearGradient id="paint0_linear_3016_374" x1="918.081" y1="-395.878" x2="997.165" y2="1915.63" gradientUnits="userSpaceOnUse"><stop offset="0.32" stop-color="%237EDC3B" stop-opacity="0.9"/><stop offset="1" stop-color="%237EDC3B" stop-opacity="0"/></linearGradient></defs></svg>');
+        width: 100%;
+        height: 1360px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        div{
+            padding-top: 250px;
+        }
+    }
+}
