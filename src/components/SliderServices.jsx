@@ -1,10 +1,29 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation } from 'swiper';
+/* import { Swiper, SwiperSlide } from "swiper/react"; */
+
+"use client";
+
+import dynamic from "next/dynamic";
+
+// Importa Swiper de forma correcta
+const SwiperComponent = dynamic(() =>
+  import("swiper/react").then((mod) => mod.Swiper),
+  { ssr: false }
+);
+const SwiperSlideComponent = dynamic(() =>
+  import("swiper/react").then((mod) => mod.SwiperSlide),
+  { ssr: false }
+);
+
+
+import Image from "next/image";
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import SubtitleSection from "./SubtitleSection"
 import styles from "@/styles/components/sliderServices.module.scss";
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { Autoplay } from 'swiper/modules';
+import { SwiperSlide } from 'swiper/react';
 const slidesService=[
     {
         id:1,
@@ -42,7 +61,7 @@ function SliderServices() {
             alignment="center"
             color="white"
         />
-        <Swiper
+        <SwiperComponent
             effect={'coverflow'}
             coverflowEffect={{
                 rotate: 0,
@@ -60,7 +79,7 @@ function SliderServices() {
                 <SwiperSlide key={slide.id} className={styles["slider-single"]}>
                 {({isActive})=>(
                     <div>
-                    <Image 
+                    <Image
                     src={slide.image}
                     alt="imagen de parner"
                     width={100}
@@ -74,7 +93,7 @@ function SliderServices() {
                 </SwiperSlide>
             ))}
             
-        </Swiper>
+        </SwiperComponent>
         </div>
     </section>
   )
