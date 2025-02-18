@@ -65,7 +65,8 @@ const ContactForm = () => {
         title="Contáctanos"
         description="Déjanos tu mensaje y nuestro equipo se pondrá en contacto contigo lo antes posible para brindarte más información sobre nuestros servicios"
         alignment="center"
-        color="white"
+        titleColor="white" 
+        descriptionColor="white" 
       />
       <form className={styles.form} onSubmit={handleSubmit}>
         {["name", "email", "phone"].map((field) => (
