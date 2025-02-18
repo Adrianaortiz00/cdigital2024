@@ -1,4 +1,4 @@
-import styles from "../styles/components/SubtitleSection.module.scss";
+import styles from "../styles/components/subtitleSection.module.scss";
 
 const SubtitleSection = ({
   title,

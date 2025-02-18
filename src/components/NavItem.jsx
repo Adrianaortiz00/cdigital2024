@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/components/NavItem.module.scss";
+import styles from "../styles/components/navItem.module.scss";
 
 const NavItem = ({ href, text }) => {
   return (

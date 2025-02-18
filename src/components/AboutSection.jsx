@@ -1,34 +1,50 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "../styles/components/aboutSection.module.scss";
 import SubtitleSection from "./SubtitleSection";
 import Button from "./Button";
+import Link from "next/link";
 
 const AboutSection = () => {
   return (
     <section className={styles.aboutSection}>
-      <div className={styles.textContainer}>
+      <motion.div
+        className={styles.textContainer}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         <SubtitleSection
-          title="Subtitle Right"
-          description="This is a description of the section in center alignment. It could have 2 lines per subtitle."
+          title="Sobre nosotros"
+          description="Convertimos desafíos en oportunidades a través de la automatización y la digitalización."
           alignment="left"
           titleColor="primary-blue"
           descriptionColor="black"
         />
 
         <p className={styles.paragraph}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus
-          sagittis tortor, quis molestie sem luctus id. Cras varius tempor
-          libero id hendrerit. Maecenas pharetra dignissim pellentesque. Nam
-          pretium, elit varius ultrices vestibulum, sem diam dictum augue, at
-          interdum velit nunc nec tortor. In hac habitasse platea dictumst. Sed
-          felis neque, vehicula eget velit ut, fringilla auctor erat. Phasellus
-          semper eu nisl vitae semper. Praesent eu nulla sed nibh luctus ornare.
+          En CDigital, nos apasiona la transformación digital y la
+          automatización de procesos. Nos especializamos en diseñar soluciones
+          innovadoras que potencian la eficiencia y productividad de las
+          empresas a través de la Microsoft Power Platform. Con un enfoque ágil
+          y centrado en el usuario, creamos herramientas low-code que
+          simplifican la gestión empresarial, optimizan flujos de trabajo y
+          mejoran la experiencia digital
         </p>
-        <div className={styles.btn}>
-        <Button variant="green-button" >Conoce más</Button>
-        </div>
-      </div>
-      <div className={styles.imageContainer}>
+
+        <Link href="/acerca" className={styles.btn}>
+          <Button variant="green-button">Conoce más</Button>
+        </Link>
+      </motion.div>
+
+      <motion.div
+        className={styles.imageContainer}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+      >
         <div className={styles.outerCircle}></div>
         <div className={styles.circle}></div>
         <div className={styles.innerCircle}>
@@ -38,9 +54,10 @@ const AboutSection = () => {
             width={400}
             height={400}
             className={styles.image}
+            priority
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

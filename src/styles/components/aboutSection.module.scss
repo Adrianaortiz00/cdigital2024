@@ -4,9 +4,10 @@
 .aboutSection {
   display: flex;
   align-items: center;
- justify-content:center; 
+  justify-content: center;
   margin-top: 50px;
   margin-bottom: 50px;
+  gap: 70px;
   
   .textContainer {
     flex: 1;
@@ -19,11 +20,13 @@
       line-height: 24px;
       margin-bottom: 24px;
     }
+
   }
 
   .btn {
     display: flex;
     justify-content: end;
+    text-decoration: none;
   }
 
   .imageContainer {
