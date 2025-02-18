@@ -34,7 +34,7 @@ const AboutSection = () => {
           mejoran la experiencia digital
         </p>
 
-        <Link href="/acerca" className={styles.btn}>
+        <Link href="/acerca" className={styles.btn} aria-label="Ir a la página acerca de nosotros">
           <Button variant="green-button">Conoce más</Button>
         </Link>
       </motion.div>
@@ -54,7 +54,6 @@ const AboutSection = () => {
             width={400}
             height={400}
             className={styles.image}
-            priority
           />
         </div>
       </motion.div>
