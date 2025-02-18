@@ -61,6 +61,7 @@
   @extend .text-h;
   color: $white-color;
   justify-self: end;
+  font-size: 14px;
 
   @media (max-width: 768px) {
     justify-self: center;

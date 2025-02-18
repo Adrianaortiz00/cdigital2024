@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/components/footer.module.scss";
+import styles from "@/styles/components/footer.module.scss";
 import { LuLinkedin, LuInstagram, LuYoutube } from "react-icons/lu";
 
 const socialLinks = [
@@ -49,7 +49,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className={styles.text}>Poppins | SemiBold 18 | Text h</div>
+        <div className={styles.text}>Automatiza, diseña y aprende con Power Platform.</div>
       </div>
     </footer>
   );
