@@ -2,7 +2,7 @@
 
 "use client";
 
-import dynamic from "next/dynamic";
+/* import dynamic from "next/dynamic";
 
 // Importa Swiper de forma correcta
 const SwiperComponent = dynamic(() =>
@@ -13,7 +13,7 @@ const SwiperSlideComponent = dynamic(() =>
   import("swiper/react").then((mod) => mod.SwiperSlide),
   { ssr: false }
 );
-
+ */
 
 import Image from "next/image";
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -23,31 +23,32 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
-import { SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 const slidesService=[
     {
         id:1,
-        title:"Title 1",
+        title:"Power Apps",
         image: "/images/slide-service-1.png",
     },
     {
         id:2,
-        title:"Title 2",
+        title:"Power Automate",
         image: "/images/slide-service-1.png",
     },
     {
         id:3,
-        title:"Title 3",
+        title:"SharePoint",
         image: "/images/slide-service-1.png",
     },
     {
         id:4,
-        title:"Title 4",
+        title:"UX/UI",
         image: "/images/slide-service-1.png",
     },
     {
         id:5,
-        title:"Title 5",
+        title:"Capacitaciones & Soporte",
         image: "/images/slide-service-1.png",
     },
 ]
@@ -61,24 +62,32 @@ function SliderServices() {
             alignment="center"
             color="white"
         />
-        <SwiperComponent
-            effect={'coverflow'}
+        <Swiper
+            effect="coverflow"
             coverflowEffect={{
                 rotate: 0,
                 stretch: 0,
                 depth: 100,
                 modifier: 2.5,
+                slideShadows: false
               }}
-            modules={[Navigation, Pagination, Autoplay,]}
-            spaceBetween={10}
-            slidesPerView={6}
-            loop={true} 
+            modules={[EffectCoverflow, Navigation, Pagination, Autoplay,]}
+            centeredSlides={true}
+            spaceBetween={0}
+            slidesPerView={3}
+           /*  loop={true} 
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false
+            }} */
+            //pagination={{ clickable: true }}
+            navigation={true}
             className={styles["slider"]}
         >
             {slidesService.map((slide)=>(
                 <SwiperSlide key={slide.id} className={styles["slider-single"]}>
-                {({isActive})=>(
-                    <div>
+                
+                    <div className="slide">
                     <Image
                     src={slide.image}
                     alt="imagen de parner"
@@ -87,13 +96,13 @@ function SliderServices() {
                     layout="intrinsic"
                     className={styles["image"]}
                     />
-                    <h3>{slide.title}</h3>
+                    <h3 className={styles["title-slide"]}>{slide.title}</h3>
                     </div>
-                )}
+                
                 </SwiperSlide>
             ))}
             
-        </SwiperComponent>
+        </Swiper>
         </div>
     </section>
   )

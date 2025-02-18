@@ -16,9 +16,27 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        div{
-            padding-top: 250px;
+        justify-content: center;
+        .slider{
+            margin-top: 10px;
+            width: 60%;
+            height: 300px;
+            padding: 100px 30px;
+            .slider-single{
+                padding: 40px 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: $white-color;
+                border-radius: 90px; 
+                overflow: hidden; 
+                box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+                .title-slide {
+                    //color: $white-color;
+                    @extend .description;
+                }
+            }
         }
     }
 }
