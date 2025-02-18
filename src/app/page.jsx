@@ -13,9 +13,16 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <SliderMain/>
-      <SliderLogos/>
+      <section>
+        <SliderMain/>
+      </section>
+      <section> 
+        <SliderLogos/>
+      </section>
+      <section>   
+             
       <SliderServices/>
+      </section>
       <ContactForm/>
     </div>
   );
