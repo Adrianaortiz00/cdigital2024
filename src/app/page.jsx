@@ -1,8 +1,8 @@
-import Button from "@/components/Button";
 import SliderMain from "@/components/SliderMain";
 import ContactForm from "@/components/ContactForm";
 import SliderLogos from "@/components/SliderLogos";
 import SliderServices from "@/components/SliderServices";
+import AboutSection from "@/components/AboutSection";
 
 export const metadata = {
   title: "Inicio | CDigital | Soluciones en Power Platform",
@@ -20,10 +20,14 @@ export default function Page() {
         <SliderLogos/>
       </section>
       <section>   
-             
-      <SliderServices/>
+        <AboutSection/>
       </section>
-      <ContactForm/>
+      <section>   
+        <SliderServices/>
+      </section>
+      <section>   
+        <ContactForm/>
+      </section>
     </div>
   );
 }

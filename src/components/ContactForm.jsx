@@ -1,26 +1,24 @@
 "use client";
 import { useState } from "react";
 import { sendInternalEmail, sendUserEmail } from "../utils/sendEmail";
-import styles from "../styles/components/ContactForm.module.scss";
+import styles from "@/styles/components/contactForm.module.scss";
 import SubtitleSection from "./SubtitleSection";
+import Button from "./Button";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  const initialFormState = { name: "", email: "", phone: "", message: "" };
+  const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const validate = () => {
-    let newErrors = {};
+    const newErrors = {};
     if (!formData.name) newErrors.name = "El nombre es obligatorio";
     if (!formData.email) {
       newErrors.email = "El correo es obligatorio";
@@ -29,8 +27,8 @@ const ContactForm = () => {
     }
     if (!formData.message) newErrors.message = "El mensaje es obligatorio";
     if (formData.phone && !/^\d{9,15}$/.test(formData.phone)) {
-        newErrors.phone = "El teléfono debe contener solo números (9-15 dígitos)";
-      }
+      newErrors.phone = "El teléfono debe contener solo números (9-15 dígitos)";
+    }
     return newErrors;
   };
 
@@ -38,7 +36,7 @@ const ContactForm = () => {
     e.preventDefault();
     setErrors({});
     setSuccessMessage("");
-    
+
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -46,19 +44,16 @@ const ContactForm = () => {
     }
 
     setIsLoading(true);
-
     try {
       await Promise.all([
         sendInternalEmail(formData),
         sendUserEmail({ name: formData.name, message: formData.message, email: formData.email }),
       ]);
-
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData(initialFormState);
       setSuccessMessage("¡Mensaje enviado con éxito!");
-
     } catch (error) {
       console.error("Error al enviar el formulario:", error);
-      setErrors({ form: error.message || "Hubo un problema al enviar el mensaje. Inténtalo de nuevo." });;
+      setErrors({ form: error.message || "Hubo un problema al enviar el mensaje. Inténtalo de nuevo." });
     } finally {
       setIsLoading(false);
     }
@@ -68,57 +63,41 @@ const ContactForm = () => {
     <div className={styles.container}>
       <SubtitleSection
         title="Contáctanos"
-        description="This is a description of the section in center alignment. It could have 2 lines per subtitle."
+        description="Déjanos tu mensaje y nuestro equipo se pondrá en contacto contigo lo antes posible para brindarte más información sobre nuestros servicios"
         alignment="center"
-        color="white"
+        titleColor="white" 
+        descriptionColor="white" 
       />
       <form className={styles.form} onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre o empresa *"
-          value={formData.name}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        {errors.name && <span className={styles.error}>{errors.name}</span>}
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Correo electrónico *"
-          value={formData.email}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        {errors.email && <span className={styles.error}>{errors.email}</span>}
-
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Teléfono"
-          value={formData.phone}
-          onChange={handleChange}
-          className={styles.input}
-        />
-        {errors.phone && <span className={styles.error}>{errors.phone}</span>}
-
+        {["name", "email", "phone"].map((field) => (
+          <div key={field}>
+            <input
+              type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
+              name={field}
+              placeholder={
+                field === "name" ? "Nombre o empresa *" :
+                field === "email" ? "Correo electrónico *" : "Teléfono"
+              }
+              value={formData[field]}
+              onChange={handleChange}
+              className={styles.input}
+            />
+            {errors[field] && <span className={styles.error}>{errors[field]}</span>}
+          </div>
+        ))}
         <textarea
           name="message"
           placeholder="Mensaje *"
           value={formData.message}
           onChange={handleChange}
           className={styles.textarea}
-        ></textarea>
+        />
         {errors.message && <span className={styles.error}>{errors.message}</span>}
-
         {errors.form && <span className={styles.error}>{errors.form}</span>}
-
         {successMessage && <span className={styles.success}>{successMessage}</span>}
-
-        <button type="submit" className={styles.button} disabled={isLoading}>
+        <Button type="submit" variant="green-button" disabled={isLoading}>
           {isLoading ? "Enviando..." : "Enviar mensaje"}
-        </button>
+        </Button>
       </form>
     </div>
   );

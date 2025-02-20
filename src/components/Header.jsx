@@ -1,4 +1,4 @@
-import styles from "@/styles/components/Header.module.scss";
+import styles from "@/styles/components/header.module.scss";
 import Button from "@/components/Button";
 import Image from "next/image";
 
@@ -23,7 +23,7 @@ const Header = () => {
           priority
         />
       </Link>
-      <NavItem href="/acerca" text="Soluciones" className={styles.soluciones} />
+      <NavItem href="/servicios" text="Soluciones" className={styles.soluciones} />
       <Link href="/contacto" passHref>
         <Button variant="blue-button">Contacto</Button>
       </Link>

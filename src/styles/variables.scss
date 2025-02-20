@@ -8,3 +8,11 @@ $blue-gradient: linear-gradient(180deg, #0079FF 0%, #0079FF 19%, #11215C 100%);
 
 $font-primary: "Poppins", sans-serif;
 $font-secondary: "Space Grotesk", sans-serif;
+
+$colors: (
+  "primary-blue": $primary-blue-color,
+  "grey": $grey-color,
+  "black": $black-color,
+  "white": $white-color
+);
+

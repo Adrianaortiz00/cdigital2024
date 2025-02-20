@@ -51,6 +51,7 @@
 .textarea {
   text-align: center;
   padding: 8px;
+  margin-bottom: 30px;
   height: 100px;
   resize: none;
   @extend .text-h;
@@ -62,25 +63,6 @@
 
   @media (max-width: 1024px) {
     width: 600px;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-}
-
-.button {
-  background-color: $green-color;
-  color: $white-color;
-  padding: 10px;
-  border: none;
-  border-radius: 50px;
-  width: 265px;
-  cursor: pointer;
-  @extend .text-p;
-
-  &:hover {
-    background-color: darken($green-color, 10%);
   }
 
   @media (max-width: 768px) {
@@ -101,5 +83,4 @@
   @extend .text-p;
   font-size: 15px;
   color: $white-color;
-  
 }
