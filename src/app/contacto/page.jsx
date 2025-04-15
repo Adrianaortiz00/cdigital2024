@@ -1,3 +1,6 @@
+import ContactForm from "@/components/ContactForm";
+import SubtitleSection from "@/components/SubtitleSection";
+
 export const metadata = {
   title: "Contacto | CDigital | Soluciones en Power Platform", 
   description: "Ponte en contacto con nosotros para saber cómo podemos ayudarte a transformar tu negocio con Power Platform.",
@@ -6,8 +9,12 @@ export const metadata = {
 export default function ContactoPage() {
   return (
     <div>
-      <h1>Contacto</h1>
-      <p>¿Tienes alguna pregunta?.</p>
+      <SubtitleSection
+        title="Soluciones Tecnológicas"
+        description="This is a description of the section in center alignment. It could have 2 lines per subtitle."
+        alignment="center"
+      />
+      <ContactForm/>
     </div>
   );
 }
