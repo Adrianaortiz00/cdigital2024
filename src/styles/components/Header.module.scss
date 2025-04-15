@@ -1,0 +1,18 @@
+@import "../variables.scss";
+@import "../globals.scss";
+
+.header {
+  background-color: white;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+}

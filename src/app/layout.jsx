@@ -1,7 +1,9 @@
-import "../styles/globals.scss";
 import Fonts from "../components/Fonts.jsx";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer.jsx";
 
 export const metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "CDigital | Soluciones en Power Platform",
   description: "CDigital crea soluciones innovadoras con Microsoft Power Platform.",
   openGraph: {
@@ -30,7 +32,7 @@ export const metadata = {
     },
     {
       name: "instagram",
-      content: "https://www.instagram.com/tu_cuenta",
+      content: "https://www.instagram.com/cdigital.dev?igsh=bGlpc3l6MHdyMXp3",
     },
   ],
 };
@@ -40,7 +42,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Fonts />
-        {children}
+        <nav>
+          <Header />
+        </nav>
+        <main>
+          {children}
+        </main>
+        <footer>
+          <Footer/>
+        </footer>
       </body>
     </html>
   );

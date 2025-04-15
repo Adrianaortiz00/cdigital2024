@@ -1,4 +1,8 @@
-import styles from "../styles/page.module.scss";
+import SliderMain from "@/components/SliderMain";
+import ContactForm from "@/components/ContactForm";
+import SliderLogos from "@/components/SliderLogos";
+import SliderServices from "@/components/SliderServices";
+import AboutSection from "@/components/AboutSection";
 
 export const metadata = {
   title: "Inicio | CDigital | Soluciones en Power Platform",
@@ -9,15 +13,21 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <h1 className={styles.title}>Space Grotesk | Bold 60 | Title h1</h1>
-      <h2 className={styles.subtitle}>
-        Space Grotesk | Medium 48 | Subtitle h2
-      </h2>
-      <h3 className={styles.description}>
-        Poppins | Regular 30 | Descriptions h3
-      </h3>
-      <p className={styles.textP}>Poppins | Regular 18 | Text p</p>
-      <h4 className={styles.textH}>Poppins | SemiBold 18 | Text h</h4>
+      <section>
+        <SliderMain/>
+      </section>
+      <section> 
+        <SliderLogos/>
+      </section>
+      <section>   
+        <AboutSection/>
+      </section>
+      <section>   
+        <SliderServices/>
+      </section>
+      <section>   
+        <ContactForm/>
+      </section>
     </div>
   );
 }
